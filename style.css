@@ -89,6 +89,7 @@ img {
 .info:hover,
 .info.expanded {
     height: 80%;                 /* Expand area when interacting */
+    
     .info-hint {
       opacity: 0;
     }
