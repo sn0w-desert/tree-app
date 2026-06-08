@@ -90,7 +90,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // Expand .info drawer on touch
   var info = document.querySelector('.info');
   [document.querySelector('.handle'), document.querySelector('.info-content')].forEach(function(el) {
-    el && el.addEventListener('touchstart', function() { info.style.height = '80%'; });
+    el && el.addEventListener('touchstart', function() { info.classList.add("expanded"); });
   });
 });
 

@@ -86,14 +86,25 @@ img {
 }
 .info:focus,
 .info:active,
-.info:hover {
+.info:hover,
+.info.expanded {
     height: 80%;                 /* Expand area when interacting */
+    .info-hint {
+      opacity: 0;
+    }
 }
 
 .info-content {
   height: 100%;
   overflow: auto;
   box-sizing: border-box;
+}
+
+.info-hint {
+  font-size: 0.75rem;
+  text-align: center;
+  margin-top: -3px;
+  color: grey;
 }
 
 .collapsible {
