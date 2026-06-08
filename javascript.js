@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', function() {
     recogniseSelect.querySelectorAll('.recognise-audio-item').forEach(function(item) {
       item.addEventListener('click', function(e) {
         e.preventDefault();
-        setTrack(this.getAttribute('data-src'), 'Recognising an oak tree', this.getAttribute('credit') || this.textContent.trim());
+        setTrack(this.getAttribute('data-src'), 'My Story', this.getAttribute('credit') || this.textContent.trim());
       });
     });
   }
