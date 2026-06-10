@@ -202,7 +202,7 @@ img {
 }
 
 .dropdown label .icon.playing {
-  background: url('audio icon.svg') center/contain no-repeat #509E2F;
+  background: url('audio.svg') center/contain no-repeat #509E2F;
   clip-path: none;
   border-radius: 50%;
 }
