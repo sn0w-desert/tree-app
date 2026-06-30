@@ -7,7 +7,9 @@ body {
   background-attachment: fixed;
   background-position: center center;
 }
-
+body.no-scroll {
+  overflow: hidden;
+}
 button {
   border: none;
   background-color: white;
