@@ -43,18 +43,23 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   // audio selection
-  var recogniseSelect = document.getElementById('recogniseSelect');
-  if (recogniseSelect) {
-    recogniseSelect.querySelector('.select-label').addEventListener('click', function() {
-      recogniseSelect.classList.toggle('open');
+   dropdown.querySelectorAll('.select').forEach(function(select) {
+    var selectLabel = select.querySelector('.select-label');
+    if (!selectLabel) return;
+    select.classList.add('open');
+
+    selectLabel.addEventListener('click', function(e) {
+      e.preventDefault();
+      select.classList.toggle('open');
     });
-    recogniseSelect.querySelectorAll('.recognise-audio-item').forEach(function(item) {
+
+    select.querySelectorAll('.recognise-audio-item').forEach(function(item) {
       item.addEventListener('click', function(e) {
         e.preventDefault();
-        setTrack(this.getAttribute('data-src'), 'My Story', this.getAttribute('credit') || this.textContent.trim());
+        setTrack(this.getAttribute('data-src'), selectLabel.textContent.trim(), this.getAttribute('credit') || this.textContent.trim());
       });
     });
-  }
+  });
 
   label.addEventListener('click', function(e) {
     if (playPauseBtn && (e.target === playPauseBtn || playPauseBtn.contains(e.target))) {
@@ -80,10 +85,11 @@ document.addEventListener('DOMContentLoaded', function() {
   document.addEventListener('click', function(e) {
     if (!dropdown.contains(e.target)) {
       dropdown.classList.remove('pulled');
-    
-      if (input.checked) input.checked = false;
-      var recogniseSelectInner = dropdown.querySelector('#recogniseSelect');
-      if (recogniseSelectInner) recogniseSelectInner.classList.remove('open');
+    }
+    var info = document.querySelector('.info');
+    if (info && info.classList.contains('expanded') && !info.contains(e.target)) {
+      info.classList.remove('expanded');
+      document.body.classList.remove('no-scroll');
     }
   });
 
