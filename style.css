@@ -263,7 +263,7 @@ img {
 
 /* slide open */
 .dropdown input:checked ~ .menu {
-  max-height: 200px;
+  max-height: fit-content;
 }
 
 .menu a, .menu .audio-item {
